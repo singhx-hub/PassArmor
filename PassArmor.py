@@ -1,7 +1,7 @@
+import random
+import string
 import tkinter as tk
 from tkinter import *
-from colorama import Fore, Style
-from termcolor import colored
 
 # GUI design
 root = Tk()
@@ -23,8 +23,8 @@ Label(root, text="\" Check password's strength and ensure it hasn't been publicl
       fg="yellow", font="arial 10 bold").place(x=120, y=110)
 
 # Password label
-pass_label = tk.Label(root, text="Enter Password:", bd=5, fg="white", bg="black", font="arial 15 bold")
-pass_label.place(x=140, y=170)
+pass_label = tk.Label(root, text="Password:", bd=5, fg="white", bg="black", font="arial 15 bold")
+pass_label.place(x=195, y=170)
 
 # Text box
 text_box = tk.Entry(root, show="*", bd=5, fg="black", bg="white", font="arial 15 bold")
@@ -32,15 +32,33 @@ text_box.place(x=310, y=170)
 
 # Check button
 check_button = tk.Button(root, text="Check", font="arial 15 bold", command=lambda: check_password(text_box.get()))
-check_button.place(x=260, y=250)
+check_button.place(x=200, y=250)
 
 # Show button
-show_button = tk.Button(root, text="Show ", font="arial 15 bold")
-show_button.place(x=350, y=250)
+show_button = tk.Button(root, text="Show ", font="arial 15 bold", command=lambda: show_pass(text_box))
+show_button.place(x=300, y=250)
+
+generate = tk.Button(root, text="Auto-Generate", font="arial 15 bold", command=lambda: generate_password(text_box))
+generate.place(x=400, y=250)
 
 # Result label
-result_label = tk.Label(root, text="", bd=5, bg="white", font="arial 10 bold")
-result_label.place(x=230, y=330)
+result_label = tk.Label(root, text="", bd=5, font="arial 13 bold")
+result_label.place(x=190, y=330)
+
+
+def show_pass(password_entry):
+    password_entry.config(show="")
+
+
+# Auto generate password
+def generate_password(password_entry):
+    length = 18
+    chars = string.ascii_letters + string.digits + string.punctuation
+    password = ''
+    for i in range(length):
+        password += random.choice(chars)
+        password_entry.delete(0, tk.END)
+        password_entry.insert(0, password)
 
 
 # Check for password Strength
@@ -67,19 +85,19 @@ def check_strength(password):
                 break
 
     if len(password) < min_len:
-        strength = "\u26A0 Weak: Password is too short."
+        strength = "\u26A0 WEAK: Password is too short."
 
     elif not number:
-        strength = "\u26A0 Weak: Password must contain at least one number."
+        strength = "\u26A0 WEAK: Password must contain at least one number."
 
     elif not letter:
-        strength = "\u26A0 Weak: Password must contain at least one letter"
+        strength = "\u26A0 WEAK: Password must contain at least one letter"
 
     elif not mix_char:
-        strength = "\u26A0 Weak: Password must contain letters, numbers & special characters.}"
+        strength = "\u26A0 WEAK: Password must contain letters, numbers & special characters.}"
 
     else:
-        strength = "\u2713 Strong: Password meets all strength criteria."
+        strength = "\u2713 STRONG: Password meets all strength criteria."
 
     return strength
 
