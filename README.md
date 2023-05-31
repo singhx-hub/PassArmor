@@ -22,6 +22,7 @@ Clone the repository:
 
 
        $ git clone https://github.com/your-username/PassArmor.git
+       
        $ cd PassArmor
 
 Install the required dependencies:
@@ -44,11 +45,13 @@ Run the application:
 
 ![image](https://github.com/singhx-hub/PassArmor/assets/126919241/f139992e-701e-459d-a406-6c573ce8e5b4)
 
-Chechking for Leakage and password strength:
+Checking for Leakage and password strength:
+
 ![image](https://github.com/singhx-hub/PassArmor/assets/126919241/ec1071eb-d7f4-4e42-b4fe-c9cf8fc6ce20)
 
 
 Auto-Generate password checking:
+
 ![image](https://github.com/singhx-hub/PassArmor/assets/126919241/b6dc874c-c2bb-43e2-9ff7-bc593e15b809)
 
 
