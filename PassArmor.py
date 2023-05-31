@@ -43,7 +43,7 @@ generate.place(x=400, y=250)
 
 # Result label
 result_label = tk.Label(root, text="", bd=5, font="arial 13 bold")
-result_label.place(x=190, y=330)
+result_label.place(x=180, y=330)
 
 
 def show_pass(password_entry):
@@ -66,6 +66,7 @@ def check_strength(password):
     min_len = 8
     number = False
     letter = False
+    spec_char = False
     mix_char = False
 
     if len(password) >= min_len:  # check for length
@@ -80,21 +81,23 @@ def check_strength(password):
                 break
 
         for char in password:
-            if char.isalnum():  # check mixture for digits, special characters and numbers
-                mix_char = True
+            if char in string.punctuation:  # check mixture for digits, special characters and numbers
+                spec_char = True
                 break
+
+        mix_char = number and letter and spec_char
 
     if len(password) < min_len:
         strength = "\u26A0 WEAK: Password is too short."
 
     elif not number:
-        strength = "\u26A0 WEAK: Password must contain at least one number."
+        strength = "\u26A0 WEAK: Password must contain letters, \n numbers & special characters."
 
     elif not letter:
-        strength = "\u26A0 WEAK: Password must contain at least one letter"
+        strength = "\u26A0 WEAK: Password must contain letters, \n numbers & special characters."
 
     elif not mix_char:
-        strength = "\u26A0 WEAK: Password must contain letters, numbers & special characters.}"
+        strength = "\u26A0 WEAK: Password must contain letters, \n numbers & special characters."
 
     else:
         strength = "\u2713 STRONG: Password meets all strength criteria."
@@ -112,7 +115,7 @@ def check_password_leakage(password):
         return "\u26A0 CAUTION: Password is publicly leaked."
 
     else:
-        return "\u2713 Password is good to use."
+        return "\u2713 Password doesn't found in public leaks.\n It's good to use"
 
     file.close()
 
