@@ -6,10 +6,16 @@ PassArmor is a password management tool that allows you to check the strength of
 
 ## Features
 
-- Password Strength Checking: PassArmor evaluates the strength of passwords based on length, presence of numbers and letters, and a mix of characters.
-- Password Leakage Check: PassArmor checks if a password has been publicly leaked by comparing it against a database of known leaked passwords.
-- Password Auto-Generation: PassArmor can generate strong and random passwords for you.
-- Simple and Intuitive GUI: PassArmor provides a user-friendly graphical interface for ease of use.
+✅ Password Strength Check: PassArmor evaluates the strength of your passwords based on length, character diversity, and complexity. It ensures that your passwords meet the recommended criteria for robust security.
+
+✅ Leakage Check: PassArmor scans your password against a comprehensive database of publicly leaked passwords. If your password is found in any known leaks, PassArmor will alert you, allowing you to take immediate action to safeguard your accounts.
+
+✅ Auto-Generate Strong Passwords: PassArmor provides an auto-generate feature that creates strong, random passwords for you. These passwords are a combination of letters, numbers, and special characters, ensuring maximum security.
+
+✅ User-Friendly Interface: PassArmor features an intuitive and user-friendly interface, making it easy for anyone to check password strength and leakage. The straightforward design allows you to quickly assess the security of your passwords.
+
+✅ Real-Time Results: PassArmor provides instant feedback on the strength of your password and its leakage status. The results are displayed in a clear and concise manner, enabling you to make informed decisions about your password choices.
+
 
 ## Requirements
 
