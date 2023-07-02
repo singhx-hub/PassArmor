@@ -91,13 +91,13 @@ def check_strength(password):
         strength = "\u26A0 WEAK: Password is too short."
 
     elif not number:
-        strength = "\u26A0 WEAK: Password must contain letters, \n numbers & special characters."
+        strength = "\u26A0 WEAK: Password must contain letters, \n numbers & special-characters."
 
     elif not letter:
-        strength = "\u26A0 WEAK: Password must contain letters, \n numbers & special characters."
+        strength = "\u26A0 WEAK: Password must contain letters, \n numbers & special-characters."
 
     elif not mix_char:
-        strength = "\u26A0 WEAK: Password must contain letters, \n numbers & special characters."
+        strength = "\u26A0 WEAK: Password must contain letters, \n numbers & special-characters."
 
     else:
         strength = "\u2713 STRONG: Password meets all strength criteria."
