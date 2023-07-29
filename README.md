@@ -39,7 +39,7 @@ Run the application:
 
        $ python passarmor.py
 
-## Usage
+## Usage:
 
     Enter a password in the Password field.
     Click the "Check" button to evaluate the strength and leakage status of the password.
